@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class Battle < Sinatra::Base
+  DEFAULT_HP = 10
   configure :development do
     register Sinatra::Reloader
   end
@@ -23,6 +24,8 @@ class Battle < Sinatra::Base
   get '/play' do 
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
+    @player_1_HP = DEFAULT_HP
+    @player_2_HP = DEFAULT_HP
     erb(:play)
   end
 
