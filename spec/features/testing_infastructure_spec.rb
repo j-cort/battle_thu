@@ -7,14 +7,3 @@ feature 'Accessing the page' do
 
 end
 
-feature 'Entering Player Names' do 
-  
-  scenario 'Testing infastructure working' do 
-    visit '/'
-    fill_in 'player_1', with: 'James'
-    fill_in 'player_2', with: 'Chris'
-    click_button 'Submit'
-    expect(page).to have_content 'James vs Chris'
-  end
-
-end
